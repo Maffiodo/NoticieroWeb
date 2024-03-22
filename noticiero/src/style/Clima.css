@@ -1,0 +1,26 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    width: 200px;
+    text-align: center; /* Center the text */
+    font-family: Arial, sans-serif; /* Change the font family */
+    font-size: 11px; /* Change the font size */
+}
+    
+  
+  .card h3 {
+    margin: 0;
+    text-align: center;
+  }
+  
+  .card table {
+    width: 100%;
+  }
