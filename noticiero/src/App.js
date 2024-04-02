@@ -2,7 +2,7 @@
 import React from 'react';
 import Clima from './Componentes/Clima';
 import Peliculas from './Componentes/Peliculas';
-import Finanzas from './Componentes/Finanzas';
+import Deportes from './Componentes/Deportes';
 import NoticiasMexico from './Componentes/NoticiasMexico';
 
 
@@ -12,7 +12,7 @@ function App() {
       
       <Clima /> 
       <Peliculas/>
-      <Finanzas/>
+      <Deportes/>
       <NoticiasMexico/>
     </div>
   );
