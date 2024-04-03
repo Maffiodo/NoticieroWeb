@@ -21,6 +21,7 @@
 .logo-text {
     font-size: 24px;
     font-weight: bold;
+    text-decoration: none !important; 
 }
 nav {
     margin-top: 10px;
@@ -33,3 +34,11 @@ nav a {
     margin: 30px;
     font-size: 22px;
 }
+a div{
+    color:#000;
+  
+}
+a .logo-text {
+    text-decoration: none;
+  }
+  
