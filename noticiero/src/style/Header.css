@@ -1,0 +1,35 @@
+
+   header {
+    background: linear-gradient(to bottom,#ffffff, #007bff, #007bff, #007bff, #007bff, #ffffff);
+    color: #000;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-right: 20px; /* Ajusta el margen derecho del logo según sea necesario */
+}
+.logo img {
+    width: 120px; /* ajusta el tamaño de la imagen según necesites */
+    margin-right: 10px; /* ajusta el margen entre la imagen y el texto */
+}
+.logo-text {
+    font-size: 24px;
+    font-weight: bold;
+}
+nav {
+    margin-top: 10px;
+    margin-left: 20px; /* Ajusta el margen izquierdo de la barra de navegación según sea necesario */
+    padding-right: 80px;
+}
+nav a {
+    color: #000;
+    text-decoration: none;
+    margin: 30px;
+    font-size: 22px;
+}
