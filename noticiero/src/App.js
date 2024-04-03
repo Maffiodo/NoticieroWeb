@@ -14,6 +14,7 @@ import Carousel from './Componentes/Carrousel';
 function App() {
   return (
 
+
     <BrowserRouter>
       <Header />
       <Routes>
@@ -51,6 +52,7 @@ function MainComponenteWithProps() {
       <Peliculas />
       <NoticiasMexico />
     </>
+
   );
 }
 
