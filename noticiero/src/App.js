@@ -41,6 +41,7 @@ function App() {
   );
 }
 
+
 function MainComponenteWithProps() {
   return (
     <>
@@ -50,7 +51,6 @@ function MainComponenteWithProps() {
       <Peliculas />
       <NoticiasMexico />
     </>
-
   );
 }
 
