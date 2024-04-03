@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import '../style/Deportes.css';
 
 const Deportes = () => {
     const [data, setData] = useState(null);
@@ -10,10 +11,10 @@ const Deportes = () => {
             setIsLoading(true);
             setError(null); // Reseteamos el estado de error en cada nueva solicitud.
             try {
-                const response = await fetch('https://sportapi7.p.rapidapi.com/api/v1/sport/football/live-categories', {
+                const response = await fetch('https://sportapi7.p.rapidapi.com/api/v1/sport/football/events/live', {
                     method: 'GET',
                     headers: {
-                        'X-RapidAPI-Key': 'f17768b7a8mshc3e7425ec96bd7dp1d5bd4jsn67af2baa188f',
+                        'X-RapidAPI-Key': '5a2cdbf83bmsh7d96b1f62a262fap1e66cfjsne6a98560ee43',
                         'X-RapidAPI-Host': 'sportapi7.p.rapidapi.com'
                     }
                 });
@@ -33,15 +34,19 @@ const Deportes = () => {
     }, []);
 
     return (
-        <div>
+        <div className="deportes-container">
             {isLoading ? (
                 <p>Cargando datos...</p>
             ) : error ? (
                 <p>Ha ocurrido un error: {error}</p>
             ) : data ? (
                 <>
-                    {Object.entries(data).map(([key, value]) => (
-                        <p key={key}>{key}: {JSON.stringify(value)}</p>
+                    {data.events.slice(0, 10).map((event, index) => (
+                        <div key={index} className="event-card" style={{backgroundImage: `url(https://media.istockphoto.com/id/493894950/es/v%C3%ADdeo/noche-el-estadio-de-f%C3%BAtbol-de-fondo-total-de-espectadores.jpg?s=640x640&k=20&c=G-vcbCeyLeIv2vUM6qB3T1lzseZVKJUwzUH00AUQ0f8=)`}}>
+                            <h2>{event.homeTeam.name} vs {event.awayTeam.name} </h2>
+                            <p>{event.tournament.name}</p>
+                            <p>{event.status.description}</p>
+                        </div>
                     ))}
                 </>
             ) : (

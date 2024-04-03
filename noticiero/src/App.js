@@ -6,14 +6,21 @@ import Deportes from './Componentes/Deportes';
 import NoticiasMexico from './Componentes/NoticiasMexico';
 import Header from './Componentes/Header';
 
+import Carousel from './Componentes/Carrousel'; 
+
+
 
 function App() {
   return (
     <div>
+
       <Header/>
+      
+      <Carousel />
+
       <Clima /> 
-      <Peliculas/>
       <Deportes/>
+      <Peliculas/>
       <NoticiasMexico/>
     </div>
   );
