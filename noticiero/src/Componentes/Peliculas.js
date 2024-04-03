@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import '../style/Peliculas.css';
 
 function Peliculas() {
   const [peliculas, setPeliculas] = useState([]);
@@ -28,13 +29,16 @@ function Peliculas() {
   }
 
   return (
-    <div>
-      <h2>Recomendaciones de películas</h2>
+    <div className="peliculas-container">
+      <h2 className="titulo-peliculas">Recomendaciones de las Mejores <h1 className="titulo-semanal">peliculas para botanear</h1></h2>
+  
       {peliculas.map((pelicula) => (
-        <div key={pelicula.imdbID}>
-          <h3>{pelicula.Title}</h3>
+        <div className="pelicula" key={pelicula.imdbID}>
+        <h3>{pelicula.Title}</h3>
+        <div className="pelicula-imagen">
           <img src={pelicula.Poster} alt={pelicula.Title} />
         </div>
+      </div>
       ))}
     </div>
   );

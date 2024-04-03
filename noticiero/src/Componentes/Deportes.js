@@ -14,7 +14,7 @@ const Deportes = () => {
                 const response = await fetch('https://sportapi7.p.rapidapi.com/api/v1/sport/football/events/live', {
                     method: 'GET',
                     headers: {
-                        'X-RapidAPI-Key': '5a2cdbf83bmsh7d96b1f62a262fap1e66cfjsne6a98560ee43',
+                        'X-RapidAPI-Key': '9b3ac0e899msh76b965c36dca254p161cf8jsnab5d37dedaf4',
                         'X-RapidAPI-Host': 'sportapi7.p.rapidapi.com'
                     }
                 });
