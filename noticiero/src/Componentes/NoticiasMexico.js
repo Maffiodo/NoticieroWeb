@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import '../style/NoticiasMexico.css';
 
 const NoticiasMexico = () => {
     const [noticias, setNoticias] = useState([]);
@@ -27,28 +28,28 @@ const NoticiasMexico = () => {
     }, []);
 
     return (
-        <div>
-            <h1>Noticias de México</h1>
+        <div className="noticias-container">
+            <h1 className="titulo">Noticias de México</h1>
             {isLoading ? (
-                <p>Cargando noticias...</p>
+                <p className="cargando">Cargando noticias...</p>
             ) : error ? (
-                <p>Ha ocurrido un error: {error}</p>
+                <p className="error">Ha ocurrido un error: {error}</p>
             ) : noticias.length > 0 ? (
-                
                 noticias.map((noticia, index) => (
-                    <div key={index}>
-                        <h2>{noticia.title}</h2>
+                    <div key={index} className="noticia">
+                        <h2 className="noticia-titulo">{noticia.title}</h2>
+                        <p className="noticia-descripcion">Autor: {noticia.author}</p>
+                        <a className="noticia-link" href={noticia.url}>Leer más</a>
+                        <br />
                         {noticia.urlToImage ? (
-                            <img src={noticia.urlToImage} alt={noticia.title} />
+                            <img className="noticia-imagen" src={noticia.urlToImage} alt={noticia.title} />
                         ) : (
-                            <img src="https://dbdzm869oupei.cloudfront.net/img/sticker/preview/6721.png" alt="Imagen no disponible" />
+                            <img className="noticia-imagen" src="https://www.telemundo.com/sites/nbcutelemundo/files/styles/sponsored_image_medim/public/9b_latinx_ultimasnoticias_pp_1200x200.jpg?itok=UAUkV9W7" alt="Imagen no disponible" />
                         )}
-                        <p>{noticia.description}</p>
-                        <a href={noticia.url}>Leer más</a>
                     </div>
                 ))
             ) : (
-                <p>No se encontraron noticias.</p>
+                <p className="sin-noticias">No se encontraron noticias.</p>
             )}
         </div>
     );

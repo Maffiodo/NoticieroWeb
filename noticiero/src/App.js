@@ -13,15 +13,14 @@ import Carousel from './Componentes/Carrousel';
 function App() {
   return (
     <div>
-
       <Header/>
-      
       <Carousel />
-
-      <Clima /> 
-      <Deportes/>
+      <br/>
       <Peliculas/>
       <NoticiasMexico/>
+      <Clima /> 
+      <Deportes/>
+     
     </div>
   );
 }

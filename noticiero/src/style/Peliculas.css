@@ -1,0 +1,56 @@
+.peliculas-container {
+    display: flex;
+    justify-content: flex-start; /* Alinea las películas al inicio */
+    align-items: center;
+    padding: 20px;
+    background-color: black;
+  }
+  
+  .pelicula {
+    flex: 1; /* Esto hará que cada película tome el mismo espacio en el banner */
+    background-color: black;
+    color: white;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    width: calc(100% / 5 - 40px); /* Esto dividirá el ancho del contenedor entre el número de películas y restará el margen */
+  }
+  
+  .pelicula:first-child {
+    margin-left: 0; /* Elimina el margen izquierdo del primer elemento */
+  }
+  
+  .pelicula h3 {
+    margin: 10px 0;
+  }
+  
+  .pelicula-imagen {
+    position: relative;
+  }
+  
+  .pelicula-imagen img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .pelicula-imagen:hover img {
+    transform: scale(1.1);
+  }
+  
+  .titulo-peliculas, .titulo-semanal {
+    color: white;
+    font-family: 'Arial', sans-serif; /* Puedes cambiar la fuente a la que prefieras */
+  }
+  
+  .titulo-semanal {
+    font-size: 2em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Esto añadirá un poco de sombra al texto para darle profundidad */
+  }
+  
+  .titulo-peliculas {
+    font-size: 1.5em;
+    
+  }
+  
