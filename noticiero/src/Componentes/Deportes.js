@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import '../style/Deportes.css';
+import { deportesAPI } from './Constants';
 
 const Deportes = () => {
     const [data, setData] = useState(null);
@@ -7,15 +8,16 @@ const Deportes = () => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
+        const { URL, API_KEY, API_HOST, METHOD } = deportesAPI
         const fetchData = async () => {
             setIsLoading(true);
             setError(null); // Reseteamos el estado de error en cada nueva solicitud.
             try {
-                const response = await fetch('https://sportapi7.p.rapidapi.com/api/v1/sport/football/events/live', {
-                    method: 'GET',
+                const response = await fetch(URL, {
+                    method: METHOD,
                     headers: {
-                        'X-RapidAPI-Key': '9b3ac0e899msh76b965c36dca254p161cf8jsnab5d37dedaf4',
-                        'X-RapidAPI-Host': 'sportapi7.p.rapidapi.com'
+                        'X-RapidAPI-Key': API_KEY,
+                        'X-RapidAPI-Host': API_HOST
                     }
                 });
                 if (!response.ok) throw new Error('Algo salió mal con la solicitud.');

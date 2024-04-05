@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import '../style/Peliculas.css';
+import { idsPeliculas, peliculasAPI } from './Constants';
 
 function Peliculas() {
   const [peliculas, setPeliculas] = useState([]);
@@ -7,18 +8,26 @@ function Peliculas() {
   useEffect(() => {
     const obtenerPeliculas = async () => {
       // Lista de IDs de películas para obtener detalles
-      const idsPeliculas = ['tt3896198', 'tt1375666', 'tt0816692', 'tt6751668', 'tt7286456'];
+      const { URL } = peliculasAPI
+      const fetchFilm = async (id) => {
+        const response = await fetch(URL(id));
+        return response.json();
+      }
 
-      const detallesPeliculas = await Promise.all(
-        idsPeliculas.map(async (id) => {
-          const url = `http://www.omdbapi.com/?i=${id}&apikey=ec0bec91`;
-          const response = await fetch(url);
-          const pelicula = await response.json();
-          return pelicula;
-        })
-      );
+      const promisesArray = [];
+      idsPeliculas.forEach((film) => {
+        promisesArray.push(fetchFilm(film))
+      })
 
-      setPeliculas(detallesPeliculas);
+      Promise.all(promisesArray)
+      .then(results => {
+        console.log("All requests completed successfully.");
+        setPeliculas(results);
+        // return results
+      })
+      .catch(error => {
+        console.error("An error occurred:", error);
+      });
     };
 
     obtenerPeliculas();
