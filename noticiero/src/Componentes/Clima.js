@@ -1,17 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import '../style/Clima.css';
+import { climaAPI } from './Constants';
 
 function Clima() {
   const [clima, setClima] = useState(null);
 
   useEffect(() => {
-    const obtenerClima = async () => {
-      const latitud = 28.6352800;
-      const longitud = -106.0888900;
-      const url = `https://api.open-meteo.com/v1/forecast?latitude=${latitud}&longitude=${longitud}&daily=temperature_2m_max,temperature_2m_min,precipitation_sum`;
-
+  const {URL} = climaAPI
+  const obtenerClima = async () => {
+      
       try {
-        const response = await fetch(url);
+        const response = await fetch(URL);
         const result = await response.json();
         setClima(result);
       } catch (error) {
@@ -25,7 +24,7 @@ function Clima() {
   if (!clima) {
     return <div>Cargando información del clima...</div>;
   }
-
+  const {BG_IMG} = climaAPI
   return (
     <div className="container">
       <div className="card-container">
@@ -33,7 +32,7 @@ function Clima() {
           const fecha = new Date(time);
           const diaSemana = fecha.toLocaleDateString('es-ES', { weekday: 'long' });
           return (
-            <div className="card" key={i} style={{backgroundImage: `url(https://council.science/wp-content/uploads/2021/03/sam-schooler-E9aetBe2w40-unsplash-clouds-weather-sky-gcos-e1614965867837-1536x768.jpg)`}}>
+            <div className="card" key={i} style={{backgroundImage: BG_IMG}}>
               <h3>Clima Chihuahua, Chihuahua</h3>
               <div className="table-container">
                 <table>

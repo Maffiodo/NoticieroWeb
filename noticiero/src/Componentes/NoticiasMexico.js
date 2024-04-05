@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import '../style/NoticiasMexico.css';
+import { noticiasMexicoAPI } from './Constants';
 
 const NoticiasMexico = () => {
     const [noticias, setNoticias] = useState([]);
@@ -7,11 +8,12 @@ const NoticiasMexico = () => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
+        const { URL } = noticiasMexicoAPI
         const fetchData = async () => {
             setIsLoading(true);
             setError(null); // Reseteamos el estado de error en cada nueva solicitud.
             try {
-                const response = await fetch('https://newsapi.org/v2/top-headlines?country=mx&apiKey=e6bd42d4a2fb45e3b0e3c1abc457699a');
+                const response = await fetch(URL);
                 if (!response.ok) throw new Error('Algo salió mal con la solicitud.');
                 
                 const data = await response.json();
@@ -26,7 +28,7 @@ const NoticiasMexico = () => {
 
         fetchData();
     }, []);
-
+    const { IMG_NOTICIA } = noticiasMexicoAPI
     return (
         <div className="noticias-container">
             <h1 className="titulo">Noticias de México</h1>
@@ -44,7 +46,7 @@ const NoticiasMexico = () => {
                         {noticia.urlToImage ? (
                             <img className="noticia-imagen" src={noticia.urlToImage} alt={noticia.title} />
                         ) : (
-                            <img className="noticia-imagen" src="https://www.telemundo.com/sites/nbcutelemundo/files/styles/sponsored_image_medim/public/9b_latinx_ultimasnoticias_pp_1200x200.jpg?itok=UAUkV9W7" alt="Imagen no disponible" />
+                            <img className="noticia-imagen" src={IMG_NOTICIA} alt="Imagen no disponible" />
                         )}
                     </div>
                 ))
