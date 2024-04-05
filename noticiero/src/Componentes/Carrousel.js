@@ -56,7 +56,7 @@ const Carrousel = () => {
           transitionTime={500}
         >
           {games.map((game, index) => (
-            <div key={index}>
+            <div key={index} className="img-style">
               <img src={game.keyImages[0].url} alt={game.title} />
               <div className="carousel-text">
                 <h2>{game.title}</h2>
