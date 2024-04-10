@@ -38,6 +38,7 @@ function Peliculas() {
   }
 
   return (
+    <div className='blackdiv'><h1 className='blackreddiv'>NETFLIX</h1>
     <div className="peliculas-container">
       <h2 className="titulo-peliculas">Recomendaciones de las Mejores <h1 className="titulo-semanal">peliculas para botanear</h1></h2>
   
@@ -49,6 +50,7 @@ function Peliculas() {
         </div>
       </div>
       ))}
+    </div>
     </div>
   );
 }

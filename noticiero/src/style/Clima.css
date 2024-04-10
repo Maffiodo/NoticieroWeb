@@ -23,6 +23,10 @@
   color: white; /* Cambia el color del texto a blanco para que sea legible sobre la imagen de fondo */
   position: relative; /* Permite posicionar el contenido de la tarjeta en relación con la tarjeta */
 }
+.whiteh1{
+  background-color: white;
+  color: black;
+}
 
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
@@ -31,6 +35,8 @@
 
 .card h3 {
   font-size: 18px;
+  text-align: center;
+  background-color: rgba(50,50,50,.1);
 }
 
 .table-container {
@@ -39,8 +45,10 @@
 
 .table-container table {
   width: 100%;
-  color: white; /* Cambia el color del texto de la tabla a blanco para que sea legible sobre el fondo negro semi-transparente */
+  background-color: rgba(200,200,200,.1);
+  color: black; /* Cambia el color del texto de la tabla a blanco para que sea legible sobre el fondo negro semi-transparente */
 }
+
 
 .table-container th, .table-container td {
   padding: 5px;
