@@ -4,7 +4,11 @@
     white-space: nowrap;
     height: 50%; /* Ajusta el carrusel al 50% de la altura de la ventana */
     width: 100%; /* Ajusta el carrusel al 80% del ancho del body */
-    margin: 0 auto; /* Centra el carrusel horizontalmente */
+    margin: 100px auto; /* Centra el carrusel horizontalmente */
+  }
+
+  .img-style {
+    margin: 40px 0;
   }
   
   .carousel-item {
@@ -46,13 +50,15 @@
   }
   
   .carousel .slide {
-    background-color: black; /* Fondo negro para las imágenes pequeñas */
+    background-color: white; /* Fondo negro para las imágenes pequeñas */
   }
   
   .carousel .slide img {
     max-height: 600px; /* Aumenta la altura máxima de las imágenes */
     object-fit: contain;
     margin: 0 auto; /* Centra las imágenes horizontalmente */
+    /* border-radius: 100px; */
+    border-radius: 50%;
   }
   .carousel .legend {
     max-height: 200px; /* Aumenta la altura máxima del cuadro de la descripción */
