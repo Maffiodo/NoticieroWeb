@@ -44,6 +44,13 @@ const Carrousel = () => {
 
   return (
     <div>
+      <head>
+       
+      </head>
+      <div className='blackdiv'>
+      <h1 className='blackdiv'>
+          Nuevos Lanzamientos  de Epic Games
+          </h1>
       {games.length > 0 && (
         <Carousel
           showArrows={true}
@@ -70,6 +77,8 @@ const Carrousel = () => {
           ))}
         </Carousel>
       )}
+
+       </div>
     </div>
   );
 };

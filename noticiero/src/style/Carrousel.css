@@ -61,3 +61,25 @@
     text-align: justify;
     padding: 10px; /* Agrega un relleno interno para separar el texto de los bordes */
   }
+  h1{
+    text-align: center;
+    text-transform: capitalize;
+    text-decoration-line: inherit;
+    background-color: black;
+    color: antiquewhite;
+    margin-top: 2%;
+    padding-top: 50pt;
+    font-size:350%
+    ;
+    
+  }
+  .blackdiv{
+    background-color: black;
+    color: white;
+  }
+  .blackreddiv{
+    background-color: black;
+    color: red;
+    font-size:125px;
+    margin-bottom: 0%;
+  }

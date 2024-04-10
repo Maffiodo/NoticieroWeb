@@ -14,6 +14,7 @@ import Carousel from './Componentes/Carrousel';
 function App() {
   return (
 
+
     <BrowserRouter>
       <Header />
       <Routes>
@@ -41,6 +42,7 @@ function App() {
   );
 }
 
+
 function MainComponenteWithProps() {
   return (
     <>
@@ -52,6 +54,12 @@ function MainComponenteWithProps() {
     </>
 
   );
+}
+function noticias(){
+  return(
+    <>
+    </>
+  )
 }
 
 export default App;
