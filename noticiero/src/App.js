@@ -55,5 +55,11 @@ function MainComponenteWithProps() {
 
   );
 }
+function noticias(){
+  return(
+    <>
+    </>
+  )
+}
 
 export default App;

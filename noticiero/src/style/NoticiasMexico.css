@@ -1,5 +1,6 @@
 .noticias-container {
-    width: 50%;
+    width: 60%;
+    align-items: center;
     margin: auto;
   }
   
@@ -20,6 +21,7 @@
     border-radius: 10px;
     margin: 20px 0;
     padding: 20px;
+    margin-left: 2%;
   }
   
   .noticia-titulo {
@@ -48,4 +50,12 @@
   .noticia-link:hover {
     background-color: #0056b3;
   }
-  
+  .categoria-separadora{
+    font-size: 30pt;
+    background:linear-gradient(to right,#007bff,#007bff,white) ;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    padding-left: 6%;
+   
+
+  }

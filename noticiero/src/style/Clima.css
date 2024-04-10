@@ -23,6 +23,10 @@
   color: white; /* Cambia el color del texto a blanco para que sea legible sobre la imagen de fondo */
   position: relative; /* Permite posicionar el contenido de la tarjeta en relación con la tarjeta */
 }
+.whiteh1{
+  background-color: white;
+  color: black;
+}
 
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
