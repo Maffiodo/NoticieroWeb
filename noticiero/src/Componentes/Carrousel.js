@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import '../style/Carrousel.css';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import { carrouselAPI } from './Constants';
 
 const Carrousel = () => {
   const [games, setGames] = useState([]);
@@ -19,27 +20,28 @@ const Carrousel = () => {
     borderRadius: '12px'
   };
   useEffect(() => {
-    const fetchGames = async () => {
-      const url = 'https://epic-store-games.p.rapidapi.com/onSale?All&locale=us&country=us';
+    const {URL, METHOD, API_KEY, API_HOST} = carrouselAPI
+    const fetchGames = async (start, end) => {
+      const url = URL;
       const options = {
-        method: 'GET',
+        method: METHOD,
         headers: {
-          'X-RapidAPI-Key': '5a2cdbf83bmsh7d96b1f62a262fap1e66cfjsne6a98560ee43',
-          'X-RapidAPI-Host': 'epic-store-games.p.rapidapi.com'
+          'X-RapidAPI-Key': API_KEY,
+          'X-RapidAPI-Host': API_HOST
         }
       };
 
       try {
         const response = await fetch(url, options);
         const result = await response.json();
-        const limitedResult = result.slice(0, 10); // Limita los resultados a los primeros 15
+        const limitedResult = result.slice(start, end); // Limita los resultados a los primeros 15
     setGames(limitedResult);
       } catch (error) {
         console.error(error);
       }
     };
 
-    fetchGames();
+    fetchGames(0, 10);
   }, []);
 
   return (
@@ -61,7 +63,7 @@ const Carrousel = () => {
           transitionTime={500}
         >
           {games.map((game, index) => (
-            <div key={index}>
+            <div key={index} className="img-style">
               <img src={game.keyImages[0].url} alt={game.title} />
               <div className="carousel-text">
                 <h2>{game.title}</h2>
