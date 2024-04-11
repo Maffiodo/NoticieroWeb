@@ -1,7 +1,11 @@
 
    header {
+
+    background-color:#007bff;
+
     background: linear-gradient(to bottom,#ffffff, #007bff, #007bff, #007bff, #007bff, #ffffff);
     /* background: #007bff; */
+    
     color: #000;
     padding: 20px;
     display: flex;

@@ -72,7 +72,7 @@ const NoticiasMexico = () => {
 
                 <>
                     {noticias.map((noticia, index) => (
-                       <div style={{ width: '100vw'}}>                          
+                       <div>                          
                             {index % 3 === 0 && index !== noticias.length - 1 && <div className="categoria-separadora">{categories[(index / 3)]}</div>}
 
                         <div key={index} className="noticia">
