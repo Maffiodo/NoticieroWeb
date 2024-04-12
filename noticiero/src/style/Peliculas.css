@@ -54,3 +54,13 @@
     
   }
   
+  .blackdiv2{
+    background-color: black;
+    color: white;
+  }
+  .blackreddiv2{
+    background-color: black;
+    color: red;
+    font-size:125px;
+    margin-bottom: 0%;
+  }

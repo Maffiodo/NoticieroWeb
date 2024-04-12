@@ -38,7 +38,7 @@ function Peliculas() {
   }
 
   return (
-    <div className='blackdiv'><h1 className='blackreddiv'>NETFLIX</h1>
+    <div className='blackdiv2'><h1 className='blackreddiv2'>NETFLIX</h1>
     <div className="peliculas-container">
       <h1 className="titulo-peliculas">Recomendaciones de las Mejores <h2 className="titulo-semanal">peliculas para botanear</h2></h1>
   

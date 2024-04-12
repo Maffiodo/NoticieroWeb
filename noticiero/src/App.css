@@ -1,38 +1,132 @@
-.App {
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+/* Contenido principal */
+.main-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Secciones */
+.section {
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
   text-align: center;
+  transition: transform 0.3s ease-in-out;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.section:hover {
+  transform: scale(1.05);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.section h2 {
+  margin-top: 0;
+  color: #0077b6; /* Azul futurista */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Eventos */
+.events {
+  border-top: 5px solid #0077b6; /* Azul futurista */
+  padding: 20px;
+}
+
+/* Blogs */
+.blogs {
+  border-top: 5px solid #9b59b6; /* Morado futurista */
+  padding: 20px;
+}
+
+/* Videos */
+.videos {
+  border-top: 5px solid #e67e22; /* Naranja futurista */
+  padding: 20px;
+}
+
+/* Creadores */
+.creadores {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 40px 0;
+}
+
+.creadores h2 {
+  color: #000000;
+  font-size: 32px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+  text-align: center;
+  position: relative;
+}
+
+.creadores h2::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 4px;
+  background-color: #000000;
+  margin: 10px auto 0;
+}
+
+.creators {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+.card {
+  width: 250px;
+  margin: 20px;
+  text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+.card h3,
+.card p {
+  color: #000; /* Texto negro */
+}
+
+/* Sobre nosotros */
+.about {
+  background-color: #000;
+  color: #fff;
+  padding: 40px 20px;
+  width: 100%;
+  text-align: center;
+}
+
+.about-section {
+  display: inline-block;
+  width: 45%;
+  margin: 10px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.about-section h2 {
+  color: #0077b6; /* Azul futurista */
+}
+
+.about-section:first-child h2 {
+  color: #9b59b6; /* Morado futurista */
 }

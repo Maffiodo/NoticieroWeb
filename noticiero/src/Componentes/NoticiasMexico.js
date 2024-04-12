@@ -47,54 +47,36 @@ const NoticiasMexico = () => {
 
 
     return (
-        
         <div className="noticias-container">
-            <h1 className="whiteh1">Noticias de México</h1>
-            {isLoading ? (
-                <p className="cargando">Cargando noticias...</p>
-            ) : error ? (
-                <p className="error">Ha ocurrido un error: {error}</p>
-            ) : noticias.length > 0 ? (
-
-                noticias.map((noticia, index) => (
-                    <div key={index} className="noticia">
-                        <h2 className="noticia-titulo">{noticia.title}</h2>
-                        <p className="noticia-descripcion">Autor: {noticia.author}</p>
-                        <a className="noticia-link" href={noticia.url}>Leer más</a>
-                        <br />
-                        {noticia.urlToImage ? (
-                            <img className="noticia-imagen" src={noticia.urlToImage} alt={noticia.title} />
-                        ) : (
-                            <img className="noticia-imagen" src={IMG_NOTICIA} alt="Imagen no disponible" />
-                        )}
-                    </div>
-                ))
-
-                <>
-                    {noticias.map((noticia, index) => (
-                       <div>                          
-                            {index % 3 === 0 && index !== noticias.length - 1 && <div className="categoria-separadora">{categories[(index / 3)]}</div>}
-
-                        <div key={index} className="noticia">
-                            <h2 className="noticia-titulo">{noticia.title}</h2>
-                            <p className="noticia-descripcion">Autor: {noticia.author}</p>
-                            <a className="noticia-link" href={noticia.url}>Leer más</a>
-                            <br />
-                            {noticia.urlToImage ? (
-                                <img className="noticia-imagen" src={noticia.urlToImage} alt={noticia.title} />
-                            ) : (
-                                <img className="noticia-imagen" src="https://www.telemundo.com/sites/nbcutelemundo/files/styles/sponsored_image_medim/public/9b_latinx_ultimasnoticias_pp_1200x200.jpg?itok=UAUkV9W7" alt="Imagen no disponible" />
-                            )}
-                        </div>
-                            </div>
-                    ))}
-                </>
-
-            ) : (
-                <p className="sin-noticias">No se encontraron noticias.</p>
-            )}
+          <h1 className="whiteh1">Noticias de México</h1>
+          {isLoading ? (
+            <p className="cargando">Cargando noticias...</p>
+          ) : error ? (
+            <p className="error">Ha ocurrido un error: {error}</p>
+          ) : noticias.length > 0 ? (
+            <>
+              {noticias.map((noticia, index) => (
+                <div key={index}>
+                  {index % 3 === 0 && index !== noticias.length - 1 && <div className="categoria-separadora">{categories[(index / 3)]}</div>}
+                  <div className="noticia">
+                    <h2 className="noticia-titulo">{noticia.title}</h2>
+                    <p className="noticia-descripcion">Autor: {noticia.author}</p>
+                    <a className="noticia-link" href={noticia.url}>Leer más</a>
+                    <br />
+                    {noticia.urlToImage ? (
+                      <img className="noticia-imagen" src={noticia.urlToImage} alt={noticia.title} />
+                    ) : (
+                      <img className="noticia-imagen" src={IMG_NOTICIA} alt="Imagen no disponible" />
+                    )}
+                  </div>
+                </div>
+              ))}
+            </>
+          ) : (
+            <p className="sin-noticias">No se encontraron noticias.</p>
+          )}
         </div>
-    );
-};
+      );
+    }      
 
 export default NoticiasMexico;

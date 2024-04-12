@@ -62,21 +62,23 @@ const Carrousel = () => {
           interval={5000}
           transitionTime={500}
         >
-          {games.map((game, index) => (
-            <div key={index} className="img-style">
-              <img src={game.keyImages[0].url} alt={game.title} />
-              <div className="carousel-text">
-                <h2>{game.title}</h2>
-                {game.currentPrice === 0 ? (
-                  <p>Gratis</p>
-                ) : (
-                  <p>${game.currentPrice}</p>
-                )}
-                <button style={buttonStyle} onClick={() => window.open(game.url, '_blank')}>Ir al juego</button>
+    {games.map((game, index) => (
+  <div key={index} className="img-style">
+    <img src={game.keyImages[0].url} alt={game.title} />
+    <div className="carousel-text">
+      <h2>{game.title}</h2>
+      <p>{game.description}</p> {/* Aquí se agrega la descripción del juego */}
+      {game.currentPrice === 0 ? (
+        <p>Gratis</p>
+      ) : (
+        <p>${game.currentPrice}</p>
+      )}
+      <button style={buttonStyle} onClick={() => window.open(game.url, '_blank')}>Ir al juego</button>
+    </div>
+  </div>
+))}
 
-              </div>
-            </div>
-          ))}
+
         </Carousel>
       )}
 

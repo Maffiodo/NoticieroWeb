@@ -1,42 +1,54 @@
 .noticias-container {
-    width: 60%;
-    align-items: center;
-    margin: auto;
-  }
-  
-  .titulo {
-    text-align: center;
-    color: #333;
-  }
-  
-  .cargando,
-  .error,
-  .sin-noticias {
-    text-align: center;
-    color: #999;
-  }
-  
-  .noticia {
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    margin: 20px 0;
-    padding: 20px;
-    margin-left: 2%;
-  }
-  
-  .noticia-titulo {
-    color: #333;
-  }
-  
-  .noticia-imagen {
-    width: 30%;
-    height: auto;
-  }
-  
-  .noticia-descripcion {
-    color: #666;
-  }
-  
+  width: 60%;
+  align-items: center;
+  margin: auto;
+  background-color: #f8f9fa; /* Agrega un color de fondo suave para mejorar la legibilidad */
+  padding: 20px; /* Agrega un relleno alrededor del contenedor para dar más espacio a los elementos */
+  border-radius: 10px; /* Agrega bordes redondeados al contenedor para un aspecto más suave */
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.06); /* Agrega una sombra sutil al contenedor para darle profundidad */
+}
+
+.titulo {
+  text-align: center;
+  color: #333;
+  font-size: 24px; /* Aumenta el tamaño de la fuente para destacar el título */
+  font-weight: bold; /* Hace que el título sea negrita */
+  margin-bottom: 20px; /* Agrega un margen inferior para separar el título del resto del contenido */
+}
+
+.cargando,
+.error,
+.sin-noticias {
+  text-align: center;
+  color: #999;
+}
+
+.noticia {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin: 20px 0;
+  padding: 20px;
+  background-color: white; /* Agrega un color de fondo a cada noticia para mejorar la legibilidad */
+}
+
+.noticia-titulo {
+  color: #333;
+  font-size: 20px; /* Aumenta el tamaño de la fuente del título de la noticia */
+  font-weight: bold; /* Hace que el título de la noticia sea negrita */
+  margin-bottom: 10px; /* Agrega un margen inferior para separar el título de la descripción */
+}
+
+.noticia-imagen {
+  width: 30%; /* Ajusta el ancho de la imagen al 100% para que ocupe todo el ancho de la noticia */
+  height: auto;
+  object-fit: cover; /* Asegura que la imagen cubra todo el espacio disponible sin distorsionarse */
+  border-radius: 10px; /* Agrega bordes redondeados a la imagen para un aspecto más suave */
+}
+
+.noticia-descripcion {
+  color: #666;
+  margin-top: 10px; /* Agrega un margen superior para separar la descripción de la imagen */
+}
   .noticia-link {
     display: inline-block;
     color: #fff;
@@ -45,17 +57,16 @@
     margin-top: 20px;
     text-decoration: none;
     border-radius: 5px;
-  }
-  
-  .noticia-link:hover {
-    background-color: #0056b3;
-  }
-  .categoria-separadora{
-    font-size: 30pt;
-    background:linear-gradient(to right,#007bff,#007bff,white) ;
-    padding-top: 20px;
-    padding-bottom: 40px;
-    padding-left: 6%;
-   
+}
 
-  }
+.noticia-link:hover {
+    background-color: #0056b3;
+}
+
+.categoria-separadora {
+    font-size: 30pt;
+    background: linear-gradient(to right, #007bff, #007bff, white);
+    padding: 20px;
+    margin-top: 40px; /* Agrega un margen superior para separar las categorías de las noticias anteriores */
+    border-radius: 10px; /* Agrega bordes redondeados a las categorías para un aspecto más suave */
+}
